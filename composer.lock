@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e8c6859c768180425928ce827ddf546",
+    "content-hash": "8d91617cbc5c97ebc73003876af7a796",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1519,6 +1519,53 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "drupal/annotations",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/annotations",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/annotations-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "6bce1516ef25f82571f4f678f3764d2848fdaab3"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1534227480",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "kkumaren",
+                    "homepage": "https://www.drupal.org/user/409992"
+                }
+            ],
+            "description": "Provide annotations such as footnotes, tooltips and hints to content using Entity.",
+            "homepage": "https://www.drupal.org/project/annotations",
+            "support": {
+                "source": "http://cgit.drupalcode.org/annotations"
+            }
         },
         {
             "name": "drupal/console",

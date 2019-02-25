@@ -15,7 +15,8 @@
         "drupal/examples": "1.x-dev",
         "drupal/search_kint": "^1.0",
         "symfony/finder": "^3.4",
-        "symfony/filesystem": "^3.4"
+        "symfony/filesystem": "^3.4",
+        "drupal/annotations": "^1.0"
     },
     "replace": {
         "drupal/core": "~8.3"
