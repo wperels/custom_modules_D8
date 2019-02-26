@@ -1,0 +1,7 @@
+
+name: Module Hero
+description: Creates a module Hero showing list of heros.
+package: Custom
+
+type: module
+core: 8.x
