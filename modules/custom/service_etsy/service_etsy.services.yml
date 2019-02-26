@@ -1,0 +1,4 @@
+services:
+    service_etsy.etsy_articles:
+        class: Drupal\service_etsy\EtsyArticleService
+        arguments: ['@entity.query', '@entity.manager']
