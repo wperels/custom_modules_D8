@@ -1,0 +1,13 @@
+dino_says:
+  path: /the/dino/says/{count}
+  defaults:
+      _controller: Drupal\dino_roar\Controller\RoarController::roar
+  requirements:
+      _permission: 'access content'
+
+dino_says2:
+  path: /the/dino/says2/{count}
+  defaults:
+      _controller: Drupal\dino_roar\Controller\RoarController2::roar2
+  requirements:
+      _permission: 'access content'
