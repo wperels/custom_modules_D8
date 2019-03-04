@@ -1,13 +1,13 @@
 <?php
 
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  Inject custom service in Controller
+ *  Inject LoggerChannelFactory into Controller
  */
 
 namespace Drupal\dino_roar\Controller;
 
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\dino_roar\Jurassic\RoarGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -16,17 +16,20 @@ use Symfony\Component\HttpFoundation\Response;
 class RoarController extends ControllerBase
 {
   private $roarGenerator;
+  private $loggerFactoryService;
   
-  public function __construct(RoarGenerator $roarGenerator) 
+  public function __construct(RoarGenerator $roarGenerator, LoggerChannelFactoryInterface $loggerFactoryService) 
   {
-    $this->roarGenerator = $roarGenerator;   
+    $this->roarGenerator = $roarGenerator;
+    $this->loggerFactoryService = $loggerFactoryService;
   }
   
     public function roar($count) 
     {
-
       #$roarGenerator = new RoarGenerator();
       $roar = $this->roarGenerator->getRoar($count);
+      $this->loggerFactoryService->get('default')
+        ->debug($roar);
 
       return new Response($roar);
     }
@@ -34,8 +37,9 @@ class RoarController extends ControllerBase
   public static function create(ContainerInterface $container) 
   {
     $roarGrenerator = $container->get('dino_roar.roar_generator');
+    $loggerFactoryService = $container->get('logger.factory');
 
-    return new static($roarGrenerator);
+    return new static($roarGrenerator, $loggerFactoryService);
   }
   
 }
