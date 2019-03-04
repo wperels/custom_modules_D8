@@ -7,7 +7,7 @@ namespace Drupal\dino_roar\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\dino_roar\Jurassic\RoarGenerator2;
-use Drupal\dino_roar\Jurassic\RoarGenerator;
+#use Drupal\dino_roar\Jurassic\RoarGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,7 +21,7 @@ class RoarController2 extends ControllerBase
  * Constructor using RoarGenerator2.
  * @param RoarGenerator2 $roarGenerator2
  */
-    public function __construct(\Drupal\dino_roar\Jurassic\RoarGenerator2 $roarGenerator2) {
+    public function __construct(RoarGenerator2 $roarGenerator2) {
       $this->roarGenerator2 = $roarGenerator2;
     }
   
