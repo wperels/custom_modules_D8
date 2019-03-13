@@ -1,8 +1,13 @@
+parameters:
+    dino.roar.use_key_value_cache: true
+
 services:
     dino_roar.roar_generator:
         class: Drupal\dino_roar\Jurassic\RoarGenerator
-        
+        arguments:
+            - '@keyvalue'
+            - '%dino.roar.use_key_value_cache%'
     #Does not reconize second service
     dino_roar.roar_generator2:
         class: Drupal\dino_roar\Jurassic\RoarGenerator2
-    
+        
