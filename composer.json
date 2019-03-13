@@ -16,7 +16,9 @@
         "drupal/search_kint": "^1.0",
         "symfony/finder": "^3.4",
         "symfony/filesystem": "^3.4",
-        "drupal/annotations": "^1.0"
+        "drupal/annotations": "^1.0",
+        "doctrine/dbal": "^2.5",
+        "respect/validation": "^1.1"
     },
     "replace": {
         "drupal/core": "~8.3"
