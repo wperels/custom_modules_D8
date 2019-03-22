@@ -2,7 +2,9 @@ services:
     dino_roar.roar_generator:
         class: Drupal\dino_roar\Jurassic\RoarGenerator
         
-    #Does not reconize second service
+    # at first Does not reconize second service
+    # checking routing.yml make sure function in Contoller is correct.
+    
     dino_roar.roar_generator2:
         class: Drupal\dino_roar\Jurassic\RoarGenerator2
     
