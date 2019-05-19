@@ -9,7 +9,7 @@
         "wikimedia/composer-merge-plugin": "~1.3",
         "drush/drush": "^9",
         "drupal/core": "8.6.11",
-        "drupal/devel": "1.2",
+        "drupal/devel": "2.0",
 	"monolog/monolog": "1.0.*",
 	"pimple/pimple": "~3.0",
         "drupal/search_kint": "^1.0",
