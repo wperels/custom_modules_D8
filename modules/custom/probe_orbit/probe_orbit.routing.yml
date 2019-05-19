@@ -1,0 +1,6 @@
+probe_orbit:
+  path: /the/probe/orbits
+  defaults:
+      _controller: Drupal\probe_orbit\Controller\OrbitController::orbit
+  requirements:
+      _permission: 'access content'
