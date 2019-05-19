@@ -8,20 +8,20 @@
         "drupal/console": "~1.0",
         "wikimedia/composer-merge-plugin": "~1.3",
         "drush/drush": "^9",
-        "drupal/core": "8.6.5",
-        "drupal/devel": "1.2",
+        "drupal/core": "8.6.11",
+        "drupal/devel": "2.0",
 	"monolog/monolog": "1.0.*",
 	"pimple/pimple": "~3.0",
-        "drupal/examples": "1.x-dev",
         "drupal/search_kint": "^1.0",
         "symfony/finder": "^3.4",
         "symfony/filesystem": "^3.4",
         "drupal/annotations": "^1.0",
         "doctrine/dbal": "^2.5",
         "respect/validation": "^1.1"
+
     },
     "replace": {
-        "drupal/core": "~8.3"
+        "drupal/core": "~8.6.11"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -5,9 +5,10 @@
  */
 namespace Drupal\dino_roar\Jurassic;
 
-#use Drupal\Core\KeyValueStore\KeyValueFactoryInterface;
+
+
 use Drupal\Core\KeyValueStore\KeyValueFactoryInterface;
-#use Drupal\Core\KeyValueStore\KeyValueFactory;
+
 
 class RoarGenerator 
 {
@@ -35,5 +36,4 @@ class RoarGenerator
       
       return $string;
     }
-  
 }

@@ -17,6 +17,7 @@ class RoarController extends ControllerBase
 {
   private $roarGenerator;
   private $loggerFactoryService;
+  #private $roar;
   
   public function __construct(RoarGenerator $roarGenerator, LoggerChannelFactoryInterface $loggerFactoryService) 
   {
@@ -26,6 +27,8 @@ class RoarController extends ControllerBase
   
     public function roar($count) 
     {
+      #$keyValueStore = $this->keyValue('dino');
+      
       #$roarGenerator = new RoarGenerator();
       
       #$keyValueStore = $this->keyValue('dino');
@@ -33,7 +36,11 @@ class RoarController extends ControllerBase
       
       $roar = $this->roarGenerator->getRoar($count);
       #$keyValueStore->set('roar_string', $roar);
+
       
+
+      #$roar = $keyValueStore->get('roar_string');
+
       $this->loggerFactoryService->get('default')
         ->debug($roar);
 
