@@ -1,5 +1,5 @@
 probe_orbit:
-  path: /the/probe/orbits
+  path: /the/probe/orbits/{count}
   defaults:
       _controller: Drupal\probe_orbit\Controller\OrbitController::orbit
   requirements:

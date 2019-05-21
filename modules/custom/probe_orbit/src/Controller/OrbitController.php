@@ -1,7 +1,7 @@
 <?php
 
 /* 
- *  
+ *  Add wildcard in routing.yml. Add new Response object.
  */
 
 namespace Drupal\probe_orbit\Controller;
@@ -14,10 +14,10 @@ class OrbitController
 {
 
     
-  public function orbit() 
+  public function orbit($count) 
     {
-      
-      return new Response('OrBBBBBBBit');
+      $orbit = "Or" . str_repeat('B', $count) . "it!";
+      return new Response($orbit);
     }
   
 }
