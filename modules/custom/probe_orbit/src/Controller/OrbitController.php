@@ -6,18 +6,32 @@
 
 namespace Drupal\probe_orbit\Controller;
 
-
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\probe_orbit\Space\OrbitGenerator;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class OrbitController
-{
 
-    
+class OrbitController extends ControllerBase
+{
+  private $orbitGenerator;
+  
+  public function __construct(OrbitGenerator $orbitGenerator) 
+    {
+      $this->orbitGenerator = $orbitGenerator;
+    }
   public function orbit($count) 
     {
-      $orbit = "Or" . str_repeat('B', $count) . "it!";
+      #$orbitGenerator = new orbitGenerator;
+      $orbit = $this->orbitGenerator->getOrbit($count);
+      
       return new Response($orbit);
     }
   
+  public static function create(ContainerInterface $container) 
+    {
+      $orbitGenerator = $container->get('probe_orbit.orbit_generator');
+      return new static ($orbitGenerator);
+    }
 }
