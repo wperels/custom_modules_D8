@@ -1,4 +1,6 @@
 services:
     probe_orbit.orbit_generator:
       class: Drupal\probe_orbit\Space\OrbitGenerator
+      arguments:
+          - '@keyvalue'
         
