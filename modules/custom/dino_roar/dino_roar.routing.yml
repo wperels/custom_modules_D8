@@ -11,3 +11,11 @@ dino_says2:
       _controller: Drupal\dino_roar\Controller\RoarController2::roar2
   requirements:
       _permission: 'access content'
+      
+dino_says_nocreate:
+    path: /the/dino/says/nocreate/{count}
+    defaults:
+        _controller: 'dino_roar.roar_generator3:roar'
+    requirements:
+      _permission: 'access content'
+            
