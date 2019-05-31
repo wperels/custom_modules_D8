@@ -3,7 +3,7 @@
 /* 
  * Practice creating a custom service
  * then refer to it in the routing.yml.
- * 'dino_roar.roar_generator3:roar'
+ * 'dino_roar.roar_generator3:roar3' 
  */
 
 namespace Drupal\dino_roar\Jurassic;

@@ -7,7 +7,7 @@ services:
     dino_roar.roar_generator3:
         class: Drupal\dino_roar\Jurassic\RoarGenerator3
         arguments: []
-
+        
     dino_roar.dino_listener:
         class: Drupal\dino_roar\Jurassic\DinoListener
         arguments: ['@logger.factory']

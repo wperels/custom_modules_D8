@@ -10,7 +10,7 @@ namespace Drupal\dino_roar\Controller;
 use \Drupal\Core\Controller\ControllerBase;
 use Drupal\dino_roar\Jurassic\RoarGenerator3;
 use Symfony\Component\HttpFoundation\Response;
-#use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class RoarController3 extends ControllerBase
 {
@@ -21,17 +21,17 @@ class RoarController3 extends ControllerBase
       $this->roarGenerator3 = $roarGenerator3;
     }
   
-    public function roar($count) 
+    public function roar3($count) 
       {
       #var_dump($count);die();
-      $roar = $this->roarGenerator3->getRoar3($count);
+      $roar3 = $this->roarGenerator3->getRoar3($count);
       
-      return new Response($roar);
+      return new Response($roar3);
       }
     
-//    public static function create(ContainerInterface $container) 
-//      {
-//        $roarGenerator3 = $container->get('dino_roar.roar_generator3');
-//        return new static ($roarGenerator3);
-//      }
+    public static function create(ContainerInterface $container) 
+      {
+        $roarGenerator3 = $container->get('dino_roar.roar_generator3');
+        return new static ($roarGenerator3);
+      }
 }
