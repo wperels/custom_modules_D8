@@ -5,10 +5,10 @@ probe_orbit:
   requirements:
       _permission: 'access content'
   
-  probe_orbit_alt:
+probe_orbit_alt:
   path: /the/probe/orbitsalt/{count}
   defaults:
-      _controller: 'probe_orbit.orbit_generatoralt:orbitAlt'
+      _controller: 'probe_orbit.orbit_controlleralt:orbitAlt'
   requirements:
       _permission: 'access content'
       

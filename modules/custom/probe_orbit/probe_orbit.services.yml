@@ -8,4 +8,7 @@ services:
     probe_orbit.orbit_generatoralt:
       class: Drupal\probe_orbit\Space\OrbitGeneratorAlt
       arguments: []
-          
+      
+    probe_orbit.orbit_controlleralt:
+      class: Drupal\probe_orbit\Controller\OrbitControllerAlt
+      arguments: []   
