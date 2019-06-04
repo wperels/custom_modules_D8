@@ -15,7 +15,7 @@ dino_says2:
 dino_says_nocreate:
     path: /the/dino/says/nocreate/{count}
     defaults:
-        _controller: Drupal\dino_roar\Controller\RoarController4::roar4
+        _controller: 'dino_roar.roar_controller4:roar4'
     requirements:
       _permission: 'access content'
             
