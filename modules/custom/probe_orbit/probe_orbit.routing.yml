@@ -12,3 +12,10 @@ probe_orbit_alt:
   requirements:
       _permission: 'access content'
       
+probe_orbit_report:
+  path: /probe/report
+  defaults:
+    _form: 'Drupal\probe_orbit\Form\ProbeReportForm'
+    _title: 'Probe Report'
+  requirements:
+    _permission: 'access content'

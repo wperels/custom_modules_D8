@@ -17,3 +17,9 @@ services:
         arguments: ['@logger.factory']
         tags:
             - { name: event_subscriber }
+            
+    probe_orbit.event_subscriber:
+        class: Drupal\probe_orbit\EventSubscriber\ProbeEventsSubscriber
+        arguments: []
+        tags: 
+            - { name: event_subscriber }
