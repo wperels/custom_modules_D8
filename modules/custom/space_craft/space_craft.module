@@ -1,0 +1,15 @@
+<?php
+
+namespace Drupal\space_craft;
+
+use Drupal;
+
+/* 
+ *  Implements hook_sandwich_info_alter().
+ */
+
+function space_craft_probe_info_alter(&$probe_plugin_definitions) {
+  foreach($probe_plugin_definitions as $plugin_id => $plugin_definition) {
+   $probe_plugin_definitions[$plugin_id]['description']  = str_replace(Drupal\Core\Render\Element\t('rocket'), t('ROCKET'), $probe_plugin_definitions[$plugin_id]['description']);
+  }
+}
