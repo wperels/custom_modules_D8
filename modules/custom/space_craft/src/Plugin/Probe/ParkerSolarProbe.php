@@ -19,8 +19,8 @@ use Drupal\space_craft\ProbeBase;
 class ParkerSolarProbe extends ProbeBase {
   
   public function order(array $extras) {
-    $ingredients = ['ham, mustard', 'rocket', 'sun-dried tomatoes'];
-    $probe = array_merge($ingredients, $extras);
-    return 'You ordered an ' . implode(', ', $probe) . ' sandwich. Enjoy!';
+    $payload = ['Fields Experiment (FIELDS)', 'Wide-field Imager for Solar PRobe (WISPR)', 'rocket', 'Integrated Science Investigation of the sun (IS☉IS)'];
+    $probe = array_merge($payload, $extras);
+    return 'The spacecrafts scientific payload includes; ' . implode(', ', $probe) . ' Also the Solar Wind Electrons Alphas and Protons (SWEAP) Investigation.';
   }
 }

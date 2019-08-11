@@ -66,9 +66,11 @@ class SpaceCraftController extends ControllerBase {
     // To get an instance of a plugin, call createInstance() on the plugin
     // manager, passing the ID of the plugin to be load.
     $items = [];
+    $extras = ['a solar array ', ' and communications package. '];
     foreach ($probe_plugin_definitions as $plugin_id => $probe_plugin_definition) {
       $plugin = $this->probeManager->createInstance($plugin_id, ['of' => 'configuration values']);
       $items[] = $plugin->description() ;
+      $items[] = $plugin->order($extras);
     }
     
     $build['plugins'] = [

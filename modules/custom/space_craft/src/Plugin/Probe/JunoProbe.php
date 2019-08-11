@@ -24,9 +24,10 @@ class JunoProbe extends ProbeBase {
    * @param array $extras
    * @return string
    */
+  
   public function order(array $extras) {
-    $ingredients = ['ham, mustard', 'rocket', 'sun-dried tomatoes'];
-    $probe = array_merge($ingredients, $extras);
-    return 'You ordered an ' . implode(', ', $probe) . ' sandwich. Enjoy!';
+    $payload = ['JADE & JEDI, radio/plasma experiment', 'rocket', 'a gravity/radio science system, also '];
+    $probe = array_merge($payload, $extras);
+    return 'The spacecrafts scientific payload includes; ' . implode(', ', $probe) . ' The spacecraft will also carry a color camera, called JunoCam.';
   }
 }
