@@ -39,7 +39,7 @@ class ProbePluginManager extends DefaultPluginManager {
     /**
      *  NetBeans hint; Parent construct not called, populated arguments.
      */
-    parent::__construct($subdir, $namespaces, $module_handler, 'Drupal\space_craft\ProbeInterface', 'Drupal\space_craft\Annotation\Probe');
+    parent::__construct($subdir, $namespaces, $module_handler, $plugin_interface, $plugin_definition_annotation_name);
       // Allows the plugin definitions to be altered by an alter hook.
       $this->alterInfo('probe_info');
       

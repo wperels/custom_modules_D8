@@ -11,7 +11,7 @@ use Drupal\space_craft\ProbeBase;
 /**
  *  @Probe(
  *    id = "juno_probe",
- *    description = @Translation("Juno is a NASA spacecraft currently orbiting Jupiter"),
+ *    description = @Translation("Juno is a nasa spacecraft currently orbiting Jupiter"),
  *    instruments = 8
  * )
  */
@@ -26,7 +26,7 @@ class JunoProbe extends ProbeBase {
    */
   
   public function order(array $extras) {
-    $payload = ['JADE & JEDI, radio/plasma experiment', 'rocket', 'a gravity/radio science system, also '];
+    $payload = [' JADE & JEDI, radio/plasma experiment', 'a gravity/radio science system, also'];
     $probe = array_merge($payload, $extras);
     return 'The spacecrafts scientific payload includes; ' . implode(', ', $probe) . ' The spacecraft will also carry a color camera, called JunoCam.';
   }
