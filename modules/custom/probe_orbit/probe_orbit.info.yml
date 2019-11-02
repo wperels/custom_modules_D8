@@ -1,5 +1,5 @@
 name: Probe Orbit
 type: module
 description: "Orbiting probes"
-package: Sample
+package: Custom Modules
 core: 8.x

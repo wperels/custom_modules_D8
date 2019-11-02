@@ -1,4 +1,4 @@
-name: Space Craft Plugin
+name: Space Craft plugin
 type: module
 description: Provides an example of defining a plugin type.
 package: Custom modules

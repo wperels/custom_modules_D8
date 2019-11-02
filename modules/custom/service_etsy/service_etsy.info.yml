@@ -1,6 +1,5 @@
 name: Service Etsy
 description: Creates a service to access the Etsy API.
-package: Custom
-
+package: Custom Modules
 type: module
 core: 8.x

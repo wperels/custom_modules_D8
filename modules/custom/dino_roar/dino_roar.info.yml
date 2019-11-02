@@ -1,5 +1,5 @@
 name: Dino ROAR
 type: module
-description: "ROAR at you"
-package: Sample
+description: 'A module to learn services'
+package: Custom Modules
 core: 8.x
