@@ -17,6 +17,9 @@ use Drupal\Core\Block\Annotation\Block;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Extension\ModuleHandler;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 /**
  * Provides a simple block with a list of enabled modules
@@ -27,7 +30,20 @@ use Drupal\Core\Form\FormStateInterface;
  *   category = @Translation("Drupal 8 Development")
  * )
  */
-class ProbeBlock extends BlockBase {
+class ProbeBlock extends BlockBase implements ContainerFactoryPluginInterface {
+  
+  protected $moduleHandler;
+  
+  /**
+   * 
+   * @param ModuleHandler $module_handler
+   * The core Module Handler service. Injecting this service
+   *  to access a core service not a call to the global Drupal object.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ModuleHandler $module_handler) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->moduleHandler = $module_handler;
+  }
   
   public function build(){
   
@@ -41,7 +57,7 @@ class ProbeBlock extends BlockBase {
     
     // Use the global Drupal Service container to get
     // the list of enabled modules
-    $modules = \Drupal::moduleHandler()->getModuleList();
+    $modules = $this->moduleHandler->getModuleList();
     
     // Set an index for the loop to count the 
     // number of iterations
@@ -70,7 +86,7 @@ class ProbeBlock extends BlockBase {
  }
  
  /**
- * {@inheritdoc}
+ * Overrides \Drupal\block\BlockBase::blockAccess().
  */
  protected function blockAccess(AccountInterface $account) {
    // Only grant access to users with the 'administer blocks' permission.
@@ -113,4 +129,15 @@ class ProbeBlock extends BlockBase {
      $form_state->setErrorByName('number_of_items', t('Please enter a numeric value.'));
    }
  }
+ 
+   /**
+   * Dependency injection override the parent method
+   *   inject the Module Handler service into the controller.
+   * 
+   * @param ContainerInterface $container
+   * @return \static
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static($configuration, $plugin_id, $plugin_definition, $container->get('module_handler'));
+  }
 }
