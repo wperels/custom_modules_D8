@@ -70,7 +70,7 @@ class ProbeBlock extends BlockBase {
  }
  
  /**
- * {@inheritdoc}
+ * Overrides \Drupal\block\BlockBase::blockAccess().
  */
  protected function blockAccess(AccountInterface $account) {
    // Only grant access to users with the 'administer blocks' permission.
