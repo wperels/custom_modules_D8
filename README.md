@@ -10,3 +10,7 @@
 ##Space Craft module
 
 ######Define a new plugin type, the probe plugin, which includes the following: the base class, an interface, and the plugin manager. Also the annotation definition, a controller for a new page, as well as the probe plugins themselves.
+
+##Probe Block module
+
+#####Programmatically creates a custom Block that displays a list of enabled modules. Demonstrates a few  API methods provided by the Block sub-system, such as configuration form, form validation and access control. First version makes a call to the global Drupal Service container to get the list of enabled modules.  Second version, takes advantage of Dependency Injection. Gets the core Module Handler service from the service container, injecting this service into a plugin class and finally uses the Module Handler service to fetch then display a list of enabled modules in a custom block.
